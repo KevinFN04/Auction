@@ -114,10 +114,20 @@ public class Auction
             }
             else{
                 System.out.println("Pujador: " + highestBid.getBidder().getName());
-            }
-            
+            }            
         }
     }
     
-    
+    /**
+     * Metodo que crea una lista con los lotes por los que no se ha pujado.
+     */
+    public ArrayList getUnsold() {
+        ArrayList sinVender = new ArrayList<Lot>();        
+        for (Lot lot : lots){
+            if (lot.getHighestBid() == null){
+                sinVender.add(lot);
+            }
+        }        
+        return sinVender;
+    }
 }
