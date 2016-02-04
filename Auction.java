@@ -101,4 +101,23 @@ public class Auction
             return null;
         }
     }
+    
+    /**
+     * Metodo que imprime todos los objetos con su puja mas alta.
+     */
+    public void close(){
+        for(Lot lot : lots) {
+            Bid highestBid = lot.getHighestBid();
+            System.out.println(lot.toString());
+            if (highestBid == null){
+                System.out.println("No se han encontrado puja para este lote");
+            }
+            else{
+                System.out.println("Pujador: " + highestBid.getBidder().getName());
+            }
+            
+        }
+    }
+    
+    
 }
